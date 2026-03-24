@@ -71,3 +71,9 @@ export const TRIGGER_PATTERN = new RegExp(
 // Uses system timezone by default
 export const TIMEZONE =
   process.env.TZ || Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+// Location Service Configuration
+export const LOCATION_SERVICE_ENABLED =
+  process.env.ENABLE_LOCATION_ACCESS === 'true';
+export const LOCATION_SERVICE_TYPE = (process.env.LOCATION_SERVICE ||
+  'ipapi') as 'ipapi' | 'ip-api' | 'maxmind';
